@@ -1,3 +1,4 @@
+name 'rolling_restart'
 maintainer "Aubrey Holland"
 maintainer_email "aubrey@custora.gom"
 license "MIT"
