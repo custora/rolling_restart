@@ -9,7 +9,7 @@ module RollingRestart
         key: {
           'lock_name' => lock_name,
         },
-        condition_expression: 'lock_holder == :f',
+        condition_expression: 'lock_holder = :f',
         expression_attribute_values: {
           ':f' => holder,
         },
