@@ -1,0 +1,124 @@
+AllCops:
+  TargetRubyVersion: 2.2
+
+Metrics/BlockNesting:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 140
+
+Metrics/ModuleLength:
+  Max: 2000
+
+Metrics/ClassLength:
+  Max: 2000
+
+Metrics/MethodLength:
+  Max: 2000
+
+Metrics/AbcSize:
+  Max: 2000
+
+Metrics/ParameterLists:
+  Max: 15
+  CountKeywordArgs: false
+
+Metrics/CyclomaticComplexity:
+  Max: 600
+
+Metrics/PerceivedComplexity:
+  Max: 600
+
+# See: https://github.com/bbatsov/rubocop/issues/2614
+Performance/Casecmp:
+  Enabled: false
+
+Performance/RedundantBlockCall:
+  Enabled: false
+
+Performance/TimesMap:
+  Enabled: false
+
+Style/Alias:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IndentArray:
+  EnforcedStyle: consistent
+
+Style/IndentArray:
+  EnforcedStyle: consistent
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/PredicateName:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/SingleLineBlockParams:
+  Methods: []
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/SpaceInsideBrackets:
+  Enabled: false
+
+Style/UnneededInterpolation:
+  Enabled: false
+
+Style/WordArray:
+  MinSize: 5
+
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/Next:
+  Enabled: false
+
+Style/PerlBackrefs:
+  Enabled: false
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrivialAccessors:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Lint/EndAlignment:
+  AlignWith: variable
+
+Lint/UnderscorePrefixedVariableName:
+  Enabled: false
+
+Lint/HandleExceptions:
+  Enabled: false
+
+Documentation:
+  Enabled: false
