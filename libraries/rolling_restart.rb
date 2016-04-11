@@ -43,7 +43,7 @@ module RollingRestart
       # nada
     end
 
-    dynamoDb.wait_until(:table_exists, table_name: 'chef_rolling_restart_locks')
+    dynamo_db.wait_until(:table_exists, table_name: 'chef_rolling_restart_locks')
   end
 
   def test_lock(dynamo_db, lock_name, holder)
