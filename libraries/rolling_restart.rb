@@ -21,6 +21,7 @@ module RollingRestart
           'lock_name' => lock_name,
         },
       )
+    end
   end
 
   def setup_table(dynamo_db)
