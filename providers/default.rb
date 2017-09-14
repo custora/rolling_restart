@@ -19,12 +19,13 @@ action :execute do
   old_http_retry_count = Chef::Config[:http_retry_count]
   Chef::Config[:http_retry_count] = 0
 
+  run_context.node['rolling_restart']['default_polling_interval']
   begin
     acquire_lock(
       dynamo_db: dynamodb_client,
       lock_name: new_resource.lock_name,
       timeout: new_resource.timeout,
-      polling_interval: new_resource.polling_interval,
+      polling_interval: new_resource.polling_interval || run_context.node['rolling_restart']['default_polling_interval'],
       context: run_context,
     )
     recipe_eval(&new_resource.recipe)
