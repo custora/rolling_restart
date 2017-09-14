@@ -77,13 +77,13 @@ module RollingRestart
     response.item['lock_holder']
   end
 
-  def wait_for_lock(dynamo_db, lock_name, timeout, context)
+  def wait_for_lock(dynamo_db:, lock_name:, timeout:, polling_interval:, context:)
     holder = "#{context.node.name} - #{context.node.ipaddress}"
     start_time = Time.now
     time_expired = false
     until time_expired || test_lock(dynamo_db, lock_name, holder)
       Chef::Log.info("Waiting for rolling restart lock on #{lock_name}, currently held by #{current_lock_holder(dynamo_db, lock_name)}")
-      sleep rand(5)
+      sleep rand(polling_interval)
       time_expired = (Time.now - start_time) > timeout
     end
     if time_expired
@@ -95,8 +95,8 @@ module RollingRestart
     true
   end
 
-  def acquire_lock(dynamo_db, lock_name, timeout, holder)
-    sleep(rand) until wait_for_lock(dynamo_db, lock_name, timeout, holder)
-    Chef::Log.info("Acquired the lock for #{lock_name}")
+  def acquire_lock(**args)
+    sleep(rand) until wait_for_lock(**args)
+    Chef::Log.info("Acquired the lock for #{args[:lock_name]}")
   end
 end

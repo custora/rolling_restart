@@ -2,6 +2,7 @@ actions :execute, :clear
 
 attribute :lock_name, kind_of: String, name_attribute: true
 attribute :timeout, kind_of: Integer, default: 3600
+attribute :polling_interval, kind_of: Range, default: 1..5
 
 # no LWRP way to do this
 def initialize(*args)
